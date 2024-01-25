@@ -1,0 +1,17 @@
+{# templates/admin/dashboard.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard Admin{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue sur le Dashboard Admin</h1>
+
+    <h2>Liste des étudiants</h2>
+    <ul>
+        {% for etudiant in etudiants %}
+            <li>{{ etudiant.nom }} {{ etudiant.prenom }} ({{ etudiant.email }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

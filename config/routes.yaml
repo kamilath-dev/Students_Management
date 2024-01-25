@@ -5,3 +5,42 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+
+# Route pour la page de connexion de l'admin
+admin_login:
+    path: /admin/
+    controller: App\Controller\AdminDashboardController::login
+
+# Route pour la déconnexion de l'admin
+admin_logout:
+    path: /admin/logout
+    controller: App\Controller\AdminDashboardController::logout
+
+# Route pour le dashboard de l'admin
+admin_dashboard:
+    path: /admin\dashboard
+    controller: App\Controller\AdminDashboardController::dashboard
+
+# Route pour afficher le profil de l'admin
+admin_profil:
+    path: /admin/profil
+    controller: App\Controller\AdminDashboardController::profil
+
+# Route pour ajouter un nouvel étudiant
+admin_ajouter_etudiant:
+    path: /admin/etudiant/ajouter
+    controller: App\Controller\AdminDashboardController::ajouterEtudiant
+    methods: POST
+
+# Route pour modifier un étudiant
+admin_modifier_etudiant:
+    path: /admin/etudiant/modifier/{id}
+    controller: App\Controller\AdminDashboardController::modifierEtudiant
+    methods: POST
+
+# Route pour supprimer un étudiant
+admin_supprimer_etudiant:
+    path: /admin/etudiant/supprimer/{id}
+    controller: App\Controller\AdminDashboardController::supprimerEtudiant
+    methods: DELETE

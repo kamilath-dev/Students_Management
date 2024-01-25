@@ -1,0 +1,17 @@
+{# templates/admin/supprimer_etudiant.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Supprimer un Étudiant{% endblock %}
+
+{% block body %}
+    <h1>Supprimer un Étudiant</h1>
+
+    <p>Êtes-vous sûr de vouloir supprimer l'étudiant {{ etudiant.nom }} {{ etudiant.prenom }} ?</p>
+
+    <form method="post" action="{{ path('admin_supprimer_etudiant', {'id': etudiant.id}) }}">
+        <button type="submit">Confirmer</button>
+    </form>
+
+    <a href="{{ path('admin_dashboard') }}">Annuler</a>
+{% endblock %}

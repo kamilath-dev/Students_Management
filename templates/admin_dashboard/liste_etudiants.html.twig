@@ -1,0 +1,21 @@
+{# templates/admin/liste_etudiants.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Étudiants{% endblock %}
+
+{% block body %}
+    <h1>Liste des Étudiants</h1>
+
+    <ul>
+        {% for etudiant in etudiants %}
+            <li>
+                {{ etudiant.nom }} {{ etudiant.prenom }} ({{ etudiant.email }})
+                <a href="{{ path('admin_modifier_etudiant', {'id': etudiant.id}) }}">Modifier</a>
+                <a href="{{ path('admin_supprimer_etudiant', {'id': etudiant.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?')">Supprimer</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('admin_ajouter_etudiant') }}">Ajouter un étudiant</a>
+{% endblock %}

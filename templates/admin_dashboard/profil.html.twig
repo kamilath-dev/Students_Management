@@ -1,0 +1,22 @@
+{# templates/admin/profil.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil Admin{% endblock %}
+
+{% block body %}
+    <h1>Votre Profil</h1>
+
+    <p>Nom d'utilisateur : {{ admin.username }}</p>
+    <p>Email : {{ admin.email }}</p>
+
+    <form method="post" action="{{ path('admin_modifier_profil') }}">
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" name="username" value="{{ admin.username }}" required>
+        
+        <label for="password">Nouveau mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Modifier</button>
+    </form>
+{% endblock %}
